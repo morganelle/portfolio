@@ -1,0 +1,13 @@
+/* Nav rules */
+nav ul {
+  display: none;
+  margin:0;
+}
+nav ul li {
+  list-style: none;
+  padding: 5px 0;
+}
+
+nav:hover ul {
+  display: block;
+}
