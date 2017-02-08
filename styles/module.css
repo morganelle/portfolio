@@ -1,11 +1,10 @@
 /* Nav rules */
-nav {
-  border-bottom: 1px solid black;
-  min-height: 32px;
+nav.top-nav {
+  min-height: 40px;
 }
 
-nav i.menu {
-  padding: 6px 6px 6px 0;
+nav.top-nav i.menu {
+  padding: 11px 6px 6px 0;
   float: right;
 }
 
@@ -13,18 +12,18 @@ ul#connect-nav i {
   padding-right: 2px;
 }
 
-nav ul {
+nav.top-nav ul {
   display: none;
   margin:0;
 }
 
-nav ul li {
+nav.top-nav ul li {
   list-style: none;
   padding: 5px 0;
-  font-size: 0.7em;
+  font-size: 0.8em;
   text-transform: uppercase;
 }
 
-nav:hover ul {
+nav.top-nav:hover ul {
   display: block;
 }

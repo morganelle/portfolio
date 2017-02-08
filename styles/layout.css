@@ -1,6 +1,6 @@
 div#page-content {
   width: 90%;
-  min-width: 400px;
+  min-width: 300px;
   max-width: 700px;
   margin: 0 auto;
 }
@@ -8,23 +8,23 @@ div#page-content {
 /* Media Queries */
 /* Tablets */
 @media only screen and (min-width: 769px) {
-  nav ul#page-nav, nav ul#connect-nav, nav ul#page-nav li, nav ul#connect-nav li {
+  ul#page-nav, ul#connect-nav, ul#page-nav li, ul#connect-nav li {
     display: inline-block;
   }
-  nav ul#page-nav li, nav ul#connect-nav li {
+  ul#page-nav li, ul#connect-nav li {
     padding-right: 8px;
   }
-  nav ul#page-nav {
-    padding-top: 5px;
+  ul#page-nav, ul#connect-nav {
+    padding-top: 8px;
     padding-left: 6px;
+  }
+  ul#page-nav {
     float: left;
   }
-  nav ul#connect-nav {
-    padding-top: 5px;
-    padding-right: 6px;
+  ul#connect-nav {
     float: right;
   }
-  nav i.menu {
+  i.menu {
     display: none;
   }
 }
