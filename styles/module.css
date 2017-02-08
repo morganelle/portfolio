@@ -1,8 +1,19 @@
 /* Nav rules */
+nav {
+  border-bottom: 1px solid black;
+  min-height: 30px;
+}
+
+nav i.menu {
+  padding: 6px 6px 6px 0;
+  float: right;
+}
+
 nav ul {
   display: none;
   margin:0;
 }
+
 nav ul li {
   list-style: none;
   padding: 5px 0;

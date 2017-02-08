@@ -1,4 +1,21 @@
-section#page-content {
+div#page-content {
   width: 90%;
   margin: 0 auto;
+}
+
+/* Media Queries */
+/* Tablets */
+@media only screen and (min-width: 769px) {
+  nav ul#page-nav, nav ul#connect-nav, nav ul#page-nav li, nav ul#connect-nav li {
+    display: inline-block;
+  }
+  nav ul#page-nav {
+    float: left;
+  }
+  nav ul#connect-nav {
+    float: right;
+  }
+  nav i.menu {
+    display: none;
+  }
 }
