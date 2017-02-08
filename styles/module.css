@@ -1,12 +1,16 @@
 /* Nav rules */
 nav {
   border-bottom: 1px solid black;
-  min-height: 30px;
+  min-height: 32px;
 }
 
 nav i.menu {
   padding: 6px 6px 6px 0;
   float: right;
+}
+
+ul#connect-nav i {
+  padding-right: 2px;
 }
 
 nav ul {
@@ -17,6 +21,8 @@ nav ul {
 nav ul li {
   list-style: none;
   padding: 5px 0;
+  font-size: 0.7em;
+  text-transform: uppercase;
 }
 
 nav:hover ul {

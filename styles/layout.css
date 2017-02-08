@@ -1,5 +1,7 @@
 div#page-content {
   width: 90%;
+  min-width: 400px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -9,13 +11,28 @@ div#page-content {
   nav ul#page-nav, nav ul#connect-nav, nav ul#page-nav li, nav ul#connect-nav li {
     display: inline-block;
   }
+  nav ul#page-nav li, nav ul#connect-nav li {
+    padding-right: 8px;
+  }
   nav ul#page-nav {
+    padding-top: 5px;
+    padding-left: 6px;
     float: left;
   }
   nav ul#connect-nav {
+    padding-top: 5px;
+    padding-right: 6px;
     float: right;
   }
   nav i.menu {
     display: none;
+  }
+}
+
+/* Laptop and above */
+@media only screen and (min-width: 1025px) {
+  nav {
+    max-width: 1025px;
+    margin: 0 auto;
   }
 }
