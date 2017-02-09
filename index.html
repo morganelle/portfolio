@@ -2,7 +2,7 @@
 <html>
   <head>
     <!-- Meta tag for media queries -->
-    <meta name="viewport" content="width=devie-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>Portfolio</title>
     <!-- Font Awesome CDN -->
@@ -20,12 +20,12 @@
         <i class="fa fa-bars menu" aria-hidden="true"></i>
         <ul id="page-nav">
           <li>Home</li>
-          <li>Projects</li>
+          <li><a href="#projects">Projects</a></li>
           <li>Blog</li>
         </ul>
         <ul id="connect-nav">
-          <li><i class="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn</li>
-          <li><i class="fa fa-github-square" aria-hidden="true"></i>GitHub</li>
+          <li><a href="https://www.linkedin.com/in/morgan-nomura-36a57b8" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn<a/></li>
+          <li><a href="#" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i>GitHub</a></li>
         </ul>
       </nav>
     </header>
@@ -34,14 +34,44 @@
           <h1>About</h1>
           <p>Aenean metus erat, cursus a ornare nec, ultricies at justo. Duis molestie at lectus ac ullamcorper. Pellentesque viverra eget nisi sagittis finibus. Vestibulum tristique nulla et placerat viverra. Donec consectetur dapibus lorem nec sollicitudin. Sed nisl lacus, rhoncus nec scelerisque id, auctor aliquet nibh. Phasellus ullamcorper vitae tortor vel dapibus. Sed vitae tellus pharetra, facilisis tortor quis, aliquet nunc. Proin vitae feugiat elit. Nullam rhoncus erat a turpis semper fermentum. Morbi augue libero, condimentum at purus vitae, tempus viverra dui. Phasellus blandit sapien vel gravida faucibus. Praesent pellentesque suscipit faucibus. Fusce lacus magna, fermentum a magna et, maximus eleifend lectus.</p>
         </section>
+        <section id="skills">
+          <h1>Skills</h1>
+          <h2>Development</h2>
+            <ul>
+              <li>JavaScript</li>
+              <li>HTML5, CSS3</li>
+              <li>Version control systems, incl. Git and GitHub</li>
+              <li>Requirements gathering</li>
+              <li>Documentation authoring</li>
+            </ul>
+          <h2>Leadership</h2>
+            <ul>
+              <li>Agile process development</li>
+              <li>Project planning</li>
+              <li>Stakeholder relationship management</li>
+            </ul>
+          <h2>User Centered Design</h2>
+            <ul>
+              <li>Wireframing</li>
+              <li>User research and testing</li>
+              <li>Stakeholder relationship management</li>
+            </ul>
+        </section>
         <section id="projects">
           <h1>Projects</h1>
-          <!-- articles for projects -->
-          <article></article>
-          <article></article>
-          <article></article>
+          <!-- template article -->
+          <article class="template project">
+            <!-- <img src="" /> -->
+            <h2>Title</h2>
+            <p class="client">Client name: <span>Client</span></p>
+            <p class="role">My role: <span>Role</span></p>
+            <p class="summary"></p>
+          </article>
         </section>
       </div>
       <footer></footer>
   </body>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/projectData.js"></script>
+  <script type="text/javascript" src="js/projects.js"></script>
 </html>

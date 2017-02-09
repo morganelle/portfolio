@@ -1,20 +1,35 @@
 'use strict';
 
-function Project(name, clientName, link, summary, longDescription, coverImage) {
-  this.name = name;
-  this.clientName = clientName;
-  this.category; // need to decide if this should be an array
-  this.link = link;
-  this.summary = summary;
-  this.longDescription = longDescription;
-  this.coverImage = coverImage; // need to set up image folder structure first
-  this.supportImages; // need to set up image folder structure first
+// global variables
+var projects = [];
+
+// project constructor
+function Project(options) {
+  this.image = options.image; // need to set up image folder structure first
+  this.title = options.title;
+  this.clientName = options.clientName;
+  this.role = options.role;
+  this.category = options.category; // need to decide if this should be an array
+  this.summary = options.summary;
+  this.link = options.link;
 }
 
-function Blog(title, images, longDescription, date) {
-  this.title = title;
-  this.images = images; // need to set up image folder structure first
-  this.longDescription = longDescription; // probably need to figure out a good way to pass this to the object
-  this.date = date;
-  this.author = 'Morgan Nomura';
+// method to create new project article from template
+Project.prototype.populateTemplate = function() {
+  var $newProject = $('article.template').clone();
+  $newProject.removeClass('template');
+  $newProject.find('h2').html(this.title);
+  $newProject.find('.client span').text(this.clientName);
+  $newProject.find('.role span').html(this.role);
+  $newProject.find('p.summary').html(this.summary);
+  $newProject.append('<a href="' + 'this.link' + '">' + this.link + '</a>');
+  return $newProject;
 }
+
+projectData.forEach(function(projectDatum) {
+  projects.push(new Project(projectDatum));
+});
+
+projects.forEach(function(p) {
+  $('#projects').append(p.populateTemplate());
+})

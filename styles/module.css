@@ -1,29 +1,4 @@
-/* Nav rules */
-nav.top-nav {
-  min-height: 40px;
-}
-
-nav.top-nav i.menu {
-  padding: 11px 6px 6px 0;
-  float: right;
-}
-
-ul#connect-nav i {
-  padding-right: 2px;
-}
-
-nav.top-nav ul {
+/* Project rules */
+article.template {
   display: none;
-  margin:0;
-}
-
-nav.top-nav ul li {
-  list-style: none;
-  padding: 5px 0;
-  font-size: 0.8em;
-  text-transform: uppercase;
-}
-
-nav.top-nav:hover ul {
-  display: block;
 }
