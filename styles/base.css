@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Crimson+Text');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  border-bottom: 1px solid black;
+}
+
+p {
+   line-height: 1.5em;
+}
