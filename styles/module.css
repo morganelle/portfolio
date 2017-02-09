@@ -27,3 +27,8 @@ nav.top-nav ul li {
 nav.top-nav:hover ul {
   display: block;
 }
+
+/* Project rules */
+article.template {
+  display: none;
+}

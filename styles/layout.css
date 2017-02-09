@@ -8,6 +8,7 @@ div#page-content {
 /* Media Queries */
 /* Tablets */
 @media only screen and (min-width: 769px) {
+  /* nav rules */
   ul#page-nav, ul#connect-nav, ul#page-nav li, ul#connect-nav li {
     display: inline-block;
   }
@@ -27,10 +28,16 @@ div#page-content {
   i.menu {
     display: none;
   }
+  /* project rules */
+  article.project {
+    width: 40%;
+    display: inline-table;
+  }
 }
 
 /* Laptop and above */
 @media only screen and (min-width: 1025px) {
+  /* nav rules */
   nav {
     max-width: 1025px;
     margin: 0 auto;
