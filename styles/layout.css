@@ -44,6 +44,14 @@ nav.top-nav a {
   color:inherit;
 }
 
+/* Default section display */
+section#blog {
+  display: none;
+}
+section#projects {
+  display: none;
+}
+
 /* Media Queries */
 /* Tablets */
 @media only screen and (min-width: 769px) {
