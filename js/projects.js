@@ -22,7 +22,7 @@ Project.prototype.populateTemplate = function() {
   $newProject.find('.client span').text(this.clientName);
   $newProject.find('.role span').html(this.role);
   $newProject.find('p.summary').html(this.summary);
-  $newProject.append('<a href="' + 'this.link' + '">' + this.link + '</a>');
+  $newProject.append('<a href="' + this.link + '">' + this.link + '</a>');
   return $newProject;
 }
 
