@@ -9,8 +9,12 @@
 header {
   border-bottom: 1px solid #393E41;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h4, h5, h6 {
   font-weight: 300;
+}
+
+h2, h3 {
+  font-weight: 400;
 }
 
 h1 {
@@ -18,11 +22,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.25em;
+  font-size: 1.2em;
 }
 
 h3 {
-  font-size: 1.13em;
+  font-size: 1.1em;
 }
 
 p {
