@@ -13,15 +13,23 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="styles/state.css">
+    <script id="article-template" type="x-handlebars-template">
+      <article class="project">
+        <h2>{{title}}</h2>
+        <p class="client">Client name: <span>{{client}}</span></p>
+        <p class="role">My role: <span>{{role}}</span></p>
+        <p class="summary">{{summary}}</p>
+      </article>
+    </script>
   </head>
   <body>
     <header>
       <nav class="top-nav">
         <i class="fa fa-bars menu" aria-hidden="true"></i>
         <ul id="page-nav">
-          <li data-section="home" class="active-nav-item">Home</li>
-          <li data-section="projects">Projects</li>
-          <li data-section="blog">Blog</li>
+          <li data-section="home" class="active-nav-item"><a>Home</a></li>
+          <li data-section="projects"><a>Projects</a></li>
+          <li data-section="blog"><a>Blog</a></li>
         </ul>
         <ul id="connect-nav">
           <li><a href="https://www.linkedin.com/in/morgan-nomura-36a57b8" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn<a/></li>
@@ -61,22 +69,15 @@
         </section>
         <section id="projects">
           <h1>Projects</h1>
-          <!-- template article -->
-          <article class="template project">
-            <!-- <img src="" /> -->
-            <h2>Title</h2>
-            <p class="client">Client name: <span>Client</span></p>
-            <p class="role">My role: <span>Role</span></p>
-            <p class="summary"></p>
-          </article>
         </section>
         <section id="blog">
           <h1>Blog</h1>
         </section>
       </div>
-      <footer>Copyright Morgan Nomura 2017</footer>
+      <!-- <footer>Copyright Morgan Nomura 2017</footer> -->
   </body>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
   <script type="text/javascript" src="js/view.js"></script>
   <script type="text/javascript" src="js/projectData.js"></script>
   <script type="text/javascript" src="js/projects.js"></script>
