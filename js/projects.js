@@ -16,20 +16,24 @@ function Project(options) {
 
 // method to create new project article from template
 Project.prototype.populateTemplate = function() {
-  var $newProject = $('article.template').clone();
-  $newProject.removeClass('template');
-  $newProject.find('h2').html(this.title);
-  $newProject.find('.client span').text(this.clientName);
-  $newProject.find('.role span').html(this.role);
-  $newProject.find('p.summary').html(this.summary);
-  $newProject.append('<a href="' + this.link + '">' + this.link + '</a>');
-  return $newProject;
+  // var $newProject = $('article.template').clone();
+  // $newProject.removeClass('template');
+  // $newProject.find('h2').html(this.title);
+  // $newProject.find('.client span').text(this.clientName);
+  // $newProject.find('.role span').html(this.role);
+  // $newProject.find('p.summary').html(this.summary);
+  // $newProject.append('<a href="' + this.link + '">' + this.link + '</a>');
+  // return $newProject;
+  var source = $('#article-template').html();
+  var template = Handlebars.compile(source);
+  console.log(template);
+  return template(this);
 }
 
 projectData.forEach(function(projectDatum) {
   projects.push(new Project(projectDatum));
 });
 
-projects.forEach(function(p) {
-  $('#projects').append(p.populateTemplate());
+projects.forEach(function(project) {
+  $('#projects').append(project.populateTemplate());
 })

@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Crimson+Text');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700|Crimson+Text|Open+Sans');
 
 * {
   font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   color: #393E41;
 }
 
 header {
   border-bottom: 1px solid #393E41;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
 }
 
 h1 {
@@ -23,6 +27,7 @@ h3 {
 
 p {
   line-height: 1.5em;
+  font-family: 'Crimson-Text', sans-serif;
 }
 
 ul {
