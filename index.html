@@ -24,7 +24,7 @@
     <script id="blog-template" type="x-handlebars-template">
       <article class="blog-post">
         <h2>{{title}}</h2>
-        <p class="byline">By {{author}} on {{publishedDate}}</p>
+        <p class="byline">{{publishedDate}} | {{author}}</p>
         <p class="post-content">{{{postContent}}}</p>
         <p class="categories label">{{category}}</p>
       </article>
@@ -37,7 +37,7 @@
         <ul id="page-nav">
           <li data-section="home" class="active-nav-item"><a>Home</a></li>
           <li data-section="projects"><a>Projects</a></li>
-          <li data-section="blog"><a>Blog</a></li>
+          <li data-section="blog"><a>Journal</a></li>
         </ul>
         <ul id="connect-nav">
           <li><a href="https://www.linkedin.com/in/morgan-nomura-36a57b8" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn<a/></li>
@@ -79,7 +79,7 @@
           <h1>Projects</h1>
         </section>
         <section id="blog">
-          <h1>Blog</h1>
+          <h1>Journal</h1>
         </section>
       </div>
       <!-- <footer>Copyright Morgan Nomura 2017</footer> -->

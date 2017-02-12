@@ -8,7 +8,7 @@ var blogPosts = [];
 // Constructor
 function BlogContent(opts) {
   this.title = opts.title;
-  this.publishedDate = opts.publishedDate;
+  this.publishedDate = (new Date(opts.publishedDate)).toDateString();
   this.author = opts.author;
   this.postContent = opts.postContent;
   this.category = opts.category;
@@ -20,6 +20,11 @@ BlogContent.prototype.populateTemplate = function() {
   var template = Handlebars.compile(source);
   return template(this);
 }
+
+// Sorts blog posts by date
+blogData.sort(function(a,b) {
+  return (new Date(b.publishedDate)) - (new Date(a.publishedDate));
+});
 
 // Makes a new BlogContent object and pushes it to the blogPosts array
 blogData.forEach(function(post) {
