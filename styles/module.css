@@ -2,3 +2,21 @@
 article.template {
   display: none;
 }
+
+/* Blog post form */
+#blog-fields label {
+  display: block;
+  width: 100%;
+}
+#blog-fields input,
+#blog-fields textarea {
+  width: 100%;
+  margin-bottom: 20px;
+}
+/*input.checkbox {
+  display: inline;
+}*/
+#blog-fields input.button {
+  display: inline-block;
+  width: auto;
+}
