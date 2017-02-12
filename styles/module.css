@@ -3,6 +3,21 @@ article.template {
   display: none;
 }
 
+/* Blog display */
+#blog h2 {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.byline {
+  margin-top: 3px;
+  color: #6F7274;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+
 /* Blog post form */
 #blog-fields label {
   display: block;

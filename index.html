@@ -24,8 +24,9 @@
     <script id="blog-template" type="x-handlebars-template">
       <article class="blog-post">
         <h2>{{title}}</h2>
-        <p class="byline">{{publishedDate}} | {{author}}</p>
+        <p class="byline">{{publishedDate}}</p>
         <p class="post-content">{{{postContent}}}</p>
+        <p class="byline">- {{author}}</p>
         <p class="categories label">{{category}}</p>
       </article>
     </script>
