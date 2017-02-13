@@ -1,5 +1,16 @@
 'use strict';
 
+// Creates category inputs on blog-fields form
+function populateCategories() {
+  var source = $('#category-input-template').html();
+  var template = Handlebars.compile(source);
+  var inputs = template(context);
+  console.log(inputs);
+  $('label#category-checkboxes').append(inputs);
+}
+
+populateCategories();
+
 // Hides for preview section by default
 $('#preview').hide();
 

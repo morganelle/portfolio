@@ -20,6 +20,11 @@
         <p class="categories label">{{category}}</p>
       </article>
     </script>
+    <script id="category-input-template" type="x-handlebars-template">
+    {{#each categories}}
+      <input  id="{{category}}" type="checkbox" class="checkbox"><span>{{category}}</span>
+      {{/each}}
+    </script>
   </head>
   <body>
     <header>
@@ -43,9 +48,7 @@
             <input  id="post-date"required type="date">
           <label class="label">Content</label>
             <textarea  id="post-content" required rows="20"></textarea>
-          <label class="label">Category</label>
-            <input  id="category-1" type="checkbox" class="checkbox">Career
-            <input  id="category-2" type="checkbox" class="checkbox">Code Fellows<br />
+          <label id="category-checkboxes" class="label">Category</label>
           <input type="submit" value="Create post" class="button">
           <input type="reset" value="Reset" class="button"/>
         </form>
