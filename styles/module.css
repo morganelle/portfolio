@@ -1,11 +1,8 @@
-/* Project rules */
-article.template {
-  display: none;
-}
+/* Projects display */
+
 
 /* Blog display */
 #blog h2 {
-  margin-top: 50px;
   margin-bottom: 0;
 }
 
