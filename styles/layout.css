@@ -4,6 +4,12 @@ div#page-content {
   max-width: 700px;
   margin: 0 auto;
   padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+article.blog-post,
+article.project {
+  margin-top: 50px;
 }
 
 /* Menu rules */
@@ -53,7 +59,7 @@ section#projects {
   display: none;
 }
 /* Footer */
-footer {
+/*footer {
   text-align: center;
   margin-top: 100px;
   text-align: center;
@@ -61,7 +67,7 @@ footer {
   min-height: 30px;
   padding-top: 15px;
   border-top: 1px solid #393E41;
-}
+}*/
 
 /* Media Queries */
 /* Tablets */
@@ -74,7 +80,7 @@ footer {
     padding-left: 6px;
   }
   nav.top-nav ul li {
-    padding: 0 6px;
+    padding: 3px 6px;
     min-height: 0;
     display: inline-block;
     color: #393E41;
@@ -101,11 +107,6 @@ footer {
   }
   i.menu {
     display: none;
-  }
-  /* project rules */
-  article.project {
-    width: 40%;
-    display: inline-table;
   }
 }
 

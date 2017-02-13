@@ -16,14 +16,6 @@ function Project(options) {
 
 // method to create new project article from template
 Project.prototype.populateTemplate = function() {
-  // var $newProject = $('article.template').clone();
-  // $newProject.removeClass('template');
-  // $newProject.find('h2').html(this.title);
-  // $newProject.find('.client span').text(this.clientName);
-  // $newProject.find('.role span').html(this.role);
-  // $newProject.find('p.summary').html(this.summary);
-  // $newProject.append('<a href="' + this.link + '">' + this.link + '</a>');
-  // return $newProject;
   var source = $('#article-template').html();
   var template = Handlebars.compile(source);
   console.log(template);

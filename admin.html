@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome CDN -->
+    <script src="https://use.fontawesome.com/457d33e4c6.js"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/external/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/module.css">
+    <link rel="stylesheet" href="styles/state.css">
+    <script id="blog-template" type="x-handlebars-template">
+      <article class="blog-post">
+        <h2>{{title}}</h2>
+        <p class="byline">{{publishedDate}}</p>
+        <p class="post-content">{{{postContent}}}</p>
+        <p class="byline">- {{author}}</p>
+        <p class="categories label">{{category}}</p>
+      </article>
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="top-nav">
+        <i class="fa fa-bars menu" aria-hidden="true"></i>
+        <ul id="page-nav">
+          <li data-section="home"><a href="index.html">Home</a></li>
+          <li data-section="home" class="active-nav-item"><a>Blog admin</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="page-content">
+      <section id="write-blog">
+        <h1>Create a new blog post</h1>
+        <form id="blog-fields">
+          <label class="label">Post title</label>
+            <input type="text" id="post-title" required>
+          <label class="label">Author</label>
+            <input type="text"  id="post-author" required value="Morgan">
+          <label class="label">Publish date</label>
+            <input  id="post-date"required type="date">
+          <label class="label">Content</label>
+            <textarea  id="post-content" required rows="20"></textarea>
+          <label class="label">Category</label>
+            <input  id="category-1" type="checkbox" class="checkbox">Career
+            <input  id="category-2" type="checkbox" class="checkbox">Code Fellows<br />
+          <input type="submit" value="Create post" class="button">
+          <input type="reset" value="Reset" class="button"/>
+        </form>
+      </section>
+      <section id="preview">
+        <h1>Preview your post</h1>
+      </section>
+      <section id="export">
+        <label id="export-field" for="blog-json">
+          <input type="text" readonly id="blog-json">
+          When finalized, copy the above JSON, and paste into blogArticles.js
+        </label>
+      </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+    <!-- <script type="text/javascript" src="js/view.js"></script> -->
+    <!-- <script type="text/javascript" src="js/projectData.js"></script>
+    <script type="text/javascript" src="js/projects.js"></script> -->
+    <script type="text/javascript" src="js/blog/blogData.js"></script>
+    <script type="text/javascript" src="js/blog/blogPosts.js"></script>
+    <script type="text/javascript" src="js/blog/blogViews.js"></script>
+  </body>
+</html>

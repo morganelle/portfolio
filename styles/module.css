@@ -1,4 +1,45 @@
-/* Project rules */
-article.template {
-  display: none;
+/* Projects display */
+
+
+/* Blog display */
+#blog h2 {
+  margin-bottom: 0;
+}
+
+.byline {
+  margin-top: 3px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-size: 0.8em;
+}
+hr {
+  color: #6F7274;
+}
+
+/* Blog post form */
+#blog-fields label {
+  display: block;
+  width: 100%;
+}
+#blog-fields input,
+#blog-fields textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: 'Crimson-Text', sans-serif;
+  font-size: 0.95em;
+  line-height: 1.6em;
+}
+/*input.checkbox {
+  display: inline;
+}*/
+#blog-fields input.button {
+  display: inline-block;
+  width: auto;
+}
+
+/* Blog preview */
+#preview .blog-post {
+  border: 1px solid #44BBA4;
+  padding: 10px;
+  margin-top: 0;
 }
