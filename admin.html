@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="styles/state.css">
+    <script id="blog-template" type="x-handlebars-template">
+      <article class="blog-post">
+        <h2>{{title}}</h2>
+        <p class="byline">{{publishedDate}}</p>
+        <p class="post-content">{{{postContent}}}</p>
+        <p class="byline">- {{author}}</p>
+        <p class="categories label">{{category}}</p>
+      </article>
+    </script>
   </head>
   <body>
     <header>
@@ -27,20 +36,37 @@
         <h1>Create a new blog post</h1>
         <form id="blog-fields">
           <label class="label">Post title</label>
-            <input type="text" required>
+            <input type="text" id="post-title" required>
           <label class="label">Author</label>
-            <input type="text" required value="Morgan">
+            <input type="text"  id="post-author" required value="Morgan">
           <label class="label">Publish date</label>
-            <input required type="date">
+            <input  id="post-date"required type="date">
           <label class="label">Content</label>
-            <textarea required rows="20"></textarea>
+            <textarea  id="post-content" required rows="20"></textarea>
           <label class="label">Category</label>
-            <input type="checkbox" class="checkbox">Career
-            <input type="checkbox" class="checkbox">Code Fellows<br />
+            <input  id="category-1" type="checkbox" class="checkbox">Career
+            <input  id="category-2" type="checkbox" class="checkbox">Code Fellows<br />
           <input type="submit" value="Create post" class="button">
           <input type="reset" value="Reset" class="button"/>
         </form>
       </section>
+      <section id="preview">
+        <h1>Preview your post</h1>
+      </section>
+      <section id="export">
+        <label id="export-field" for="blog-json">
+          <input type="text" readonly id="blog-json">
+          When finalized, copy the above JSON, and paste into blogArticles.js
+        </label>
+      </section>
     </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+    <!-- <script type="text/javascript" src="js/view.js"></script> -->
+    <!-- <script type="text/javascript" src="js/projectData.js"></script>
+    <script type="text/javascript" src="js/projects.js"></script> -->
+    <script type="text/javascript" src="js/blog/blogData.js"></script>
+    <script type="text/javascript" src="js/blog/blogPosts.js"></script>
+    <script type="text/javascript" src="js/blog/blogViews.js"></script>
   </body>
 </html>

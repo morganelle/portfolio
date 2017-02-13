@@ -41,6 +41,11 @@ ul {
   margin-top: 0.5em;
 }
 
+a {
+  text-decoration: underline;
+  color: #3F88C5;
+}
+
 .label {
   font-size: 0.7em;
   color: #6F7274;
