@@ -14,7 +14,7 @@ function BlogContent(opts) {
   this.category = opts.category;
 }
 
-// Gets the Handlebar template and makes a function out of it
+// Gets the Handlebar template and makes a function
 BlogContent.prototype.populateTemplate = function() {
   var source = $('#blog-template').html();
   var template = Handlebars.compile(source);
