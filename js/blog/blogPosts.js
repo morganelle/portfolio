@@ -21,17 +21,36 @@ BlogContent.prototype.populateTemplate = function() {
   return template(this);
 }
 
-// Sorts blog posts by date
-blogData.sort(function(a,b) {
-  return (new Date(b.publishedDate)) - (new Date(a.publishedDate));
-});
+BlogContent.load = function(newData) {
+  console.log('BlogContent method is running');
+  newData.sort(function(a,b) {
+    return (new Date(b.publishedDate)) - (new Date(a.publishedDate));
+  });
+  newData.forEach(function(post) {
+    blogPosts.push(new BlogContent(post));
+  })
+}
 
-// Makes a new BlogContent object and pushes it to the blogPosts array
-blogData.forEach(function(post) {
-  blogPosts.push(new BlogContent(post));
-})
+BlogContent.toHtml = function(blogs) {
+  blogs.forEach(function(item) {
+    $('#blog').append(item.populateTemplate());
+  })
+}
 
-// Runs the populateTemplate method on all items and appends them to the blog section
-blogPosts.forEach(function(item) {
-  $('#blog').append(item.populateTemplate());
-})
+function chooseSource() {
+  if (localStorage.blogcontent) {
+    console.log('loading from local storage');
+    BlogContent.load(JSON.parse(localStorage.blogcontent));
+    BlogContent.toHtml(blogPosts);
+  }
+  else {
+    console.log('loading from json file');
+    $.getJSON('../data/blogContent.json', function(data) {
+      localStorage.setItem('blogcontent', JSON.stringify(data));
+      BlogContent.load(data);
+      BlogContent.toHtml(blogPosts);
+    });
+  }
+}
+
+chooseSource();
