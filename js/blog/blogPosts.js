@@ -22,7 +22,7 @@ BlogContent.prototype.populateTemplate = function() {
 }
 
 BlogContent.load = function(newData) {
-  console.log('BlogContent method is running');
+  console.log('BlogContent load method is running');
   newData.sort(function(a,b) {
     return (new Date(b.publishedDate)) - (new Date(a.publishedDate));
   });
@@ -37,20 +37,29 @@ BlogContent.toHtml = function(blogs) {
   })
 }
 
-function chooseSource() {
-  if (localStorage.blogcontent) {
-    console.log('loading from local storage');
-    BlogContent.load(JSON.parse(localStorage.blogcontent));
-    BlogContent.toHtml(blogPosts);
-  }
-  else {
-    console.log('loading from json file');
-    $.getJSON('../data/blogContent.json', function(data) {
-      localStorage.setItem('blogcontent', JSON.stringify(data));
-      BlogContent.load(data);
+// gets etag from HEAD and compares it with etag set in localStorage
+$.ajax({
+  type: 'HEAD',
+  async: true,
+  url: '../data/blogContent.json',
+  success: function(data, message, xhr) {
+    let etag = xhr.getResponseHeader('ETag');
+    if (etag !== localStorage.storageETag) { // if the etags don't match, populate blog content from JSON
+      console.log('etags do not match, loading from JSON file');
+      $.getJSON('../data/blogContent.json', function(data) {
+        BlogContent.load(data);
+        BlogContent.toHtml(blogPosts);
+        localStorage.setItem('blogcontent', JSON.stringify(data));
+      });
+    }
+    else { // otherwise, get the blog content from localStorage
+      console.log('etags match, loading from local storage');
+      BlogContent.load(JSON.parse(localStorage.blogcontent));
       BlogContent.toHtml(blogPosts);
-    });
+    }
+    localStorage.setItem('storageETag', etag);
+  },
+  fail: function() {
+    console.log('fail'); // wondering: should the fail condition just grab content from the JSON file?
   }
-}
-
-chooseSource();
+});
