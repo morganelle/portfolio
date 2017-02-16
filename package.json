@@ -1,0 +1,29 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio assignment for Code Fellows 301",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morganelle/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "journal",
+    "learning",
+    "code",
+    "fellows"
+  ],
+  "author": "Morgan Nomura",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/morganelle/portfolio/issues"
+  },
+  "homepage": "https://github.com/morganelle/portfolio#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
