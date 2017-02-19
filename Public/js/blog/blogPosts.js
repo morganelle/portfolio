@@ -10,7 +10,7 @@
     this.publishedDate = (new Date(opts.publishedDate)).toDateString();
     this.author = opts.author;
     this.postContent = opts.postContent;
-    this.category = opts.category;
+    this.category = opts.category.join(', ');
   }
 
   // Gets the Handlebar template and makes a function

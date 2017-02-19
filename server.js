@@ -1,13 +1,22 @@
 'use strict';
 
-// Load and instantiate Express
+// Load dependencies
+const pg = require('pg');
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
+
+// Define connection to local postgres host
+const conString = 'postgres://localhost:5432';
+const client = new pg.Client(conString);
+client.connect();
 
 // Define a port
 const PORT = process.env.PORT || 3000;
 
 // Include the static resources as an argument for app.use()
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 // Routes
@@ -16,6 +25,10 @@ app.get('/admin', function(request, response) {
 });
 
 app.get('/index', function(request, response) {
+  response.sendFile('public/index.html', {root: '.'});
+});
+
+app.get('/', function(request, response) {
   response.sendFile('public/index.html', {root: '.'});
 });
 
