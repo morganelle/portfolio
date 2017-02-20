@@ -36,30 +36,30 @@
   }
 
   // gets etag from HEAD and compares it with etag set in localStorage
-  $.ajax({
-    type: 'HEAD',
-    async: true,
-    url: '../data/blogContent.json',
-    success: function(data, message, xhr) {
-      let etag = xhr.getResponseHeader('ETag');
-      if (etag !== localStorage.storageETag) { // if the etags don't match, populate blog content from JSON
-        console.log('etags do not match, loading from JSON file');
-        $.getJSON('../data/blogContent.json', function(data) {
-          BlogContent.load(data);
-          BlogContent.toHtml(blogPosts);
-          localStorage.setItem('blogcontent', JSON.stringify(data));
-        });
-      }
-      else { // otherwise, get the blog content from localStorage
-        console.log('etags match, loading from local storage');
-        BlogContent.load(JSON.parse(localStorage.blogcontent));
-        BlogContent.toHtml(blogPosts);
-      }
-      localStorage.setItem('storageETag', etag);
-    },
-    fail: function() {
-      console.log('fail'); // wondering: should the fail condition just grab content from the JSON file?
-    }
-  });
+  // $.ajax({
+  //   type: 'HEAD',
+  //   async: true,
+  //   url: '../data/blogContent.json',
+  //   success: function(data, message, xhr) {
+  //     let etag = xhr.getResponseHeader('ETag');
+  //     if (etag !== localStorage.storageETag) { // if the etags don't match, populate blog content from JSON
+  //       console.log('etags do not match, loading from JSON file');
+  //       $.getJSON('../data/blogContent.json', function(data) {
+  //         BlogContent.load(data);
+  //         BlogContent.toHtml(blogPosts);
+  //         localStorage.setItem('blogcontent', JSON.stringify(data));
+  //       });
+  //     }
+  //     else { // otherwise, get the blog content from localStorage
+  //       console.log('etags match, loading from local storage');
+  //       BlogContent.load(JSON.parse(localStorage.blogcontent));
+  //       BlogContent.toHtml(blogPosts);
+  //     }
+  //     localStorage.setItem('storageETag', etag);
+  //   },
+  //   fail: function() {
+  //     console.log('fail'); // wondering: should the fail condition just grab content from the JSON file?
+  //   }
+  // });
   module.BlogContent = BlogContent;
 })(window);

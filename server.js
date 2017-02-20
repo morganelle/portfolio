@@ -37,6 +37,23 @@ app.get('*', function(request, response) {
   response.send('Page not found');
 });
 
+// Routes for getting data
+app.get('/blogposts', function(request, response) {
+  client.query(`
+    CREATE TABLE IF NOT EXISTS blogposts (
+      title VARCHAR(255) NOT NULL,
+      author VARCHAR(255) NOT NULL,
+      category VARCHAR(20),
+      "publishedDate" DATE,
+      "postContent" TEXT NOT NULL);`
+  )
+  console.log('table created');
+  client.query('SELECT * FROM blogposts', function(err, result) { // Make a request to the DB
+    if (err) console.error(err);
+    response.send(result.rows);
+  });
+});
+
 // Logs a console message to say which port the server has begun using
 app.listen(PORT, function() {
   console.log('app is running on localhost:3000');
