@@ -21,61 +21,59 @@ app.use(express.static('./public'));
 
 // Routes
 app.get('/admin', function(request, response) {
-  response.sendFile('public/admin.html', {root: '.'});
+  response.sendFile('admin.html', {root: './public'});
 });
 
 app.get('/index', function(request, response) {
-  response.sendFile('public/index.html', {root: '.'});
+  response.sendFile('index.html', {root: './public'});
 });
 
 app.get('/', function(request, response) {
-  response.sendFile('public/index.html', {root: '.'});
+  response.sendFile('index.html', {root: './public'});
 });
 
-// app.get('/blogposts', function(request, response) {
-//   console.log('on blogposts');
-//   response.send('on blogposts');
-// });
+// Routes for getting data
+app.get('/blogposts', function(request, response) {
+  console.log('on blogposts');
+  client.query(
+    `CREATE TABLE IF NOT EXISTS blogposts
+    (post_id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    category VARCHAR(100),
+    "publishedDate" DATE,
+    "postContent" TEXT NOT NULL);`
+  )
+  console.log('table created');
+  client.query('SELECT * FROM blogposts', function(err, result) {
+    //if (err) console.error(err);
+    console.log('result in second client query:', result.rows);
+    response.send(result.rows);
+  });
+});
 
+app.post('/blogposts', function(request, response) {
+  client.query(
+    `INSERT INTO
+    blogposts (title, author, category, "publishedDate", "postContent")
+    VALUES ($1, $2, $3, $4, $5);
+    `,
+    [
+      request.body.title,
+      request.body.author,
+      request.body.category,
+      request.body.publishedDate,
+      request.body.postContent,
+    ]
+  );
+  response.send('insert complete');
+});
+
+// 404
 app.get('*', function(request, response) {
   console.log('page not found');
   response.send('Page not found');
 });
-
-// Routes for getting data
-// app.get('/blogposts', function(request, response) {
-//   console.log('app get began to run');
-//   client.query(`
-//     CREATE TABLE IF NOT EXISTS blogposts (
-//       title VARCHAR(255) NOT NULL,
-//       author VARCHAR(255) NOT NULL,
-//       category VARCHAR(100),
-//       "publishedDate" DATE,
-//       "postContent" TEXT NOT NULL);`
-//   )
-//   console.log('table created');
-//   client.query('SELECT * FROM blogposts', function(err, result) { // Make a request to the DB
-//     if (err) console.error(err);
-//     response.send(result.rows);
-//   });
-// });
-
-// app.post('/blogposts', function(request, response) {
-//   client.query(
-//     `INSERT INTO
-//     blogposts (title, author, category, "publishedDate", "postContent")
-//     VALUES ($1, $2, $3, $4, $5);
-//     `,
-//     [
-//       request.body.title,
-//       request.body.author,
-//       request.body.category,
-//       request.body.publishedDate,
-//       request.body.postContent,
-//     ]
-//   );
-//   response.send('insert complete');
-// });
 
 // Logs a console message to say which port the server has begun using
 app.listen(PORT, function() {
