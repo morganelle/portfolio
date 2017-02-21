@@ -18,7 +18,6 @@ function Project(options) {
 Project.prototype.populateTemplate = function() {
   var source = $('#article-template').html();
   var template = Handlebars.compile(source);
-  console.log(template);
   return template(this);
 }
 
