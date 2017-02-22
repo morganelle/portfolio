@@ -28,6 +28,14 @@ app.get('/index', function(request, response) {
   response.sendFile('index.html', {root: './public'});
 });
 
+app.get('/journal', function(request, response) {
+  response.sendFile('index.html', {root: './public'});
+});
+
+app.get('/projects', function(request, response) {
+  response.sendFile('index.html', {root: './public'});
+});
+
 app.get('/', function(request, response) {
   response.sendFile('index.html', {root: './public'});
 });
