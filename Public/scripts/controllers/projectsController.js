@@ -14,7 +14,7 @@
     Project.getData(projectView.display);
     // displays content
     $('#page-content section').hide();
-    $('#page-content section#projects').show().siblings();
+    $('#page-content section#project-content').show().siblings();
   }
   // expose repoView object to global space
   module.projectsController = projectsController;

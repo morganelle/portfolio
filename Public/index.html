@@ -31,7 +31,7 @@
       </article>
     </script>
     <script id="repo-template" type="x-handlebars-template">
-      <li><a href="{{html_url}}">{{name}}</a> / {{language}}</br></li>
+      <li><a href="{{html_url}}">{{name}}</a> / <span class="label">{{language}}</span</br></li>
     </script>
   </head>
   <body>
@@ -81,8 +81,10 @@
         </section>
         <section id="projects">
           <h1>Projects</h1>
+          <section id="project-content"></section>
+          <h1>GitHub repos</h1>
+          <p>Included are repos from Code Fellows projects and class assignments.</p>
           <aside>
-            <h2>GitHub repos</h2>
             <ul>
             </ul>
           </aside>
