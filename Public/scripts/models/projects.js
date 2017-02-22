@@ -20,11 +20,14 @@
     return template(this);
   }
 
-  Project.getData = function() {
+  // method that gets data from JSON file and maps to Project.all array
+  Project.getData = function(callback) {
     $.getJSON('../../data/projectContent.json')
-    .then(data => Project.all = data.map(datum => new Project(datum)));
+    .then(data => Project.all = data.map(datum => new Project(datum)))
+    .then(function() {
+      callback();
+    })
   }
 
-  Project.all.forEach((project) => $('#projects').append(project.populateTemplate()));
   module.Project = Project;
 })(window);

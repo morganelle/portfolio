@@ -8,11 +8,8 @@
     // updates nav appearance
     $('#page-nav li').removeClass('active-nav-item');
     $('#page-nav li.projects').addClass('active-nav-item');
-    Project.getData();
-      // .then(
-      //   Project.all.forEach((project) => $('#projects').append(project.populateTemplate()))
-      // );
-    // Project.all.forEach((project) => $('#projects').append(project.populateTemplate()));
+    // loads and appends projects
+    Project.getData(projectView.display);
     // displays content
     $('#page-content section').hide();
     $('#page-content section#projects').show().siblings();

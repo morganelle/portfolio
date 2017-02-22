@@ -35,11 +35,11 @@
     $.get('/blogposts')
     .then(function(results) {
       if (results.length) {
-        console.log('loading from database');
+        console.log('journal posts loading from database');
         BlogContent.load(results);
         BlogContent.toHtml(blogPosts);
       } else {
-        console.log('loading from JSON');
+        console.log('journal posts loading from JSON');
         $.getJSON('../../data/blogContent.json')
         .then(function(jsonData) {
           jsonData.forEach(function(item) {
