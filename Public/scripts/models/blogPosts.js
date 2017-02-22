@@ -65,6 +65,5 @@
       if (callback) callback();
     })
   };
-  BlogContent.getBlogPosts();
   module.BlogContent = BlogContent;
 })(window);
