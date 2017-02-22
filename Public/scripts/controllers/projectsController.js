@@ -16,5 +16,6 @@
     $('#page-content section').hide();
     $('#page-content section#projects').show().siblings();
   }
+  // expose repoView object to global space
   module.projectsController = projectsController;
 })(window);

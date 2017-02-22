@@ -2,23 +2,22 @@
 
 (function(module) {
   const repoView = {};
-
-  // const ui = function() {
-  //   let $about = $('#about'); // Best practice: Cache the DOM query if it's used more than once.
-  //
-  //   $about.find('ul').empty();
-  //   $about.show().siblings().hide();
-  // };
-
+  // clear function to remove previously appended projects
+  const clear = function() {
+    let $projects = $('#projects');
+    $projects.find('ul').empty();
+    $projects.show().siblings().hide();
+  };
+  // create handlebars template
   let template = Handlebars.compile($('#repo-template').html());
 
   repoView.display = function() {
-    // ui();
     console.log('repoView display begins');
+    clear();
     $('#projects ul').append(
       repos.with('name').map(template)
     );
   };
-
+  // expose repoView object to global space
   module.repoView = repoView;
 })(window);
