@@ -8,6 +8,8 @@
     // updates nav appearance
     $('#page-nav li').removeClass('active-nav-item');
     $('#page-nav li.projects').addClass('active-nav-item');
+    // loads and appends github data
+    repos.requestRepos(repoView.display);
     // loads and appends projects
     Project.getData(projectView.display);
     // displays content
