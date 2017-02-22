@@ -30,15 +30,18 @@
         <p class="categories label">{{category}}</p>
       </article>
     </script>
+    <script id="repo-template" type="x-handlebars-template">
+      <li><a href="{{html_url}}">{{name}}</a> / <span class="label">{{language}}</span</br></li>
+    </script>
   </head>
   <body>
     <header>
       <nav class="top-nav">
         <i class="fa fa-bars menu" aria-hidden="true"></i>
         <ul id="page-nav">
-          <li data-section="home" class="active-nav-item"><a>Home</a></li>
-          <li data-section="projects"><a>Projects</a></li>
-          <li data-section="blog"><a>Journal</a></li>
+          <li data-section="home" class="home"><a href="/">Home</a></li>
+          <li data-section="projects" class="projects"><a href="/projects">Projects</a></li>
+          <li data-section="blog" class="journal"><a href="/journal">Journal</a></li>
         </ul>
         <ul id="connect-nav">
           <li><a href="https://www.linkedin.com/in/morgan-nomura-36a57b8" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn<a/></li>
@@ -78,6 +81,13 @@
         </section>
         <section id="projects">
           <h1>Projects</h1>
+          <section id="project-content"></section>
+          <h1>GitHub repos</h1>
+          <p>Included are repos from Code Fellows projects and class assignments.</p>
+          <aside>
+            <ul>
+            </ul>
+          </aside>
         </section>
         <section id="blog">
           <h1>Journal</h1>
@@ -85,11 +95,22 @@
       </div>
       <!-- <footer>Copyright Morgan Nomura 2017</footer> -->
   </body>
+  <!-- Vendor scripts -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
-  <script type="text/javascript" src="js/view.js"></script>
-  <script type="text/javascript" src="js/projectData.js"></script>
-  <script type="text/javascript" src="js/projects.js"></script>
-  <script type="text/javascript" src="js/blog/blogData.js"></script>
-  <script type="text/javascript" src="js/blog/blogPosts.js"></script>
+  <script src="/vendor/scripts/page.js"></script>
+  <!-- Model scripts -->
+  <script type="text/javascript" src="scripts/models/projects.js"></script>
+  <script type="text/javascript" src="data/blogData.js"></script>
+  <script type="text/javascript" src="scripts/models/blogPosts.js"></script>
+  <script type="text/javascript" src="scripts/models/githubToken.js"></script>
+  <script type="text/javascript" src="scripts/models/repos.js"></script>
+  <!-- View scripts -->
+  <script type="text/javascript" src="scripts/views/projectViews.js"></script>
+  <script type="text/javascript" src="scripts/views/repoViews.js"></script>
+  <!-- Controller scripts -->
+  <script type="text/javascript" src="scripts/controllers/homeController.js"></script>
+  <script type="text/javascript" src="scripts/controllers/journalController.js"></script>
+  <script type="text/javascript" src="scripts/controllers/projectsController.js"></script>
+  <script type="text/javascript" src="scripts/controllers/routes.js"></script>
 </html>
