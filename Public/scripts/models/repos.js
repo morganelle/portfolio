@@ -4,6 +4,7 @@
   const repos = {};
 
   repos.all = [];
+  repos.contribut = [];
 
   repos.requestRepos = function(callback) {
     $.ajax({
@@ -16,8 +17,9 @@
     .then(function() {
       callback();
     })
-  };
+  }
 
+  // function for filtering repos.all
   repos.with = attr => repos.all.filter(repo => repo[attr]);
 
   module.repos = repos;

@@ -15,7 +15,8 @@
     console.log('repoView display begins');
     clear();
     $('#projects ul').append(
-      repos.with('name').map(template)
+      // repos.with('name').map(template)
+      repos.all.map(template)
     );
   };
   // expose repoView object to global space
