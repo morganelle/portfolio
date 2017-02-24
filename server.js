@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000;
 // Include the static resources as an argument for app.use()
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static('./public'));
+app.use(express.static('./Public'));
 
 // proxy function
 function proxyGitHub(request, response) {
@@ -32,23 +32,23 @@ function proxyGitHub(request, response) {
 // Routes
 app.get('/github/*', proxyGitHub);
 app.get('/admin', function(request, response) {
-  response.sendFile('admin.html', {root: './public'});
+  response.sendFile('admin.html', {root: './Public'});
 });
 
 app.get('/index', function(request, response) {
-  response.sendFile('index.html', {root: './public'});
+  response.sendFile('index.html', {root: './Public'});
 });
 
 app.get('/journal', function(request, response) {
-  response.sendFile('index.html', {root: './public'});
+  response.sendFile('index.html', {root: './Public'});
 });
 
 app.get('/projects', function(request, response) {
-  response.sendFile('index.html', {root: './public'});
+  response.sendFile('index.html', {root: './Public'});
 });
 
 app.get('/', function(request, response) {
-  response.sendFile('index.html', {root: './public'});
+  response.sendFile('index.html', {root: './Public'});
 });
 
 // Routes for getting data
