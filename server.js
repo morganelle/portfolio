@@ -4,6 +4,7 @@
 const pg = require('pg');
 const express = require('express');
 const bodyParser = require('body-parser');
+const requestProxy = require('express-request-proxy');
 const app = express();
 
 // Define connection to local postgres host
@@ -19,7 +20,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
+// proxy function
+function proxyGitHub(request, response) {
+  console.log('Routing GitHub request for', request.params[0]);
+  (requestProxy({
+    url: `https://api.github.com/${request.params[0]}`,
+    headers: {Authorization: `token ${process.env.GITHUB_TOKEN}`}
+  }))(request, response);
+}
+
 // Routes
+app.get('/github/*', proxyGitHub);
 app.get('/admin', function(request, response) {
   response.sendFile('admin.html', {root: './public'});
 });
