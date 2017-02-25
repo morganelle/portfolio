@@ -53,7 +53,7 @@ nav.top-nav a {
 
 /* Image banner */
 div.banner {
-  background-image: url("/assets/global/2/banner-3.jpg");
+  background-image: url("/assets/global/banner-3.jpg");
   min-height: 180px;
   background-position: center;
   opacity: 0.8;
@@ -117,7 +117,7 @@ section#projects {
     display: none;
   }
   div.banner {
-    background-image: url("/assets/global/2/banner-2.jpg");
+    background-image: url("/assets/global/banner-2.jpg");
     min-height: 250px;
   }
 }
@@ -130,7 +130,7 @@ section#projects {
     margin: 0 auto;
   }
   div.banner {
-    background-image: url("/assets/global/2/banner-1.jpg");
+    background-image: url("/assets/global/banner-1.jpg");
     min-height: 300px;
   }
 }
