@@ -1,6 +1,6 @@
 /* Projects display */
 #projects aside {
-  border: 1px solid #3F88C5;
+  border: 1px solid #5F819E;
   padding: 20px 25px;
 }
 #projects aside ul {
@@ -15,6 +15,7 @@
 /* Blog display */
 #blog h2 {
   margin-bottom: 0;
+  color: #5F819E;
 }
 
 .byline {

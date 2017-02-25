@@ -24,7 +24,7 @@
     <script id="blog-template" type="x-handlebars-template">
       <article class="blog-post">
         <h2>{{title}}</h2>
-        <p class="byline">{{publishedDate}}</p>
+        <p class="byline">Published {{publishedDate}}</p>
         <p class="post-content">{{{postContent}}}</p>
         <p class="byline">- {{author}}</p>
         <p class="categories label">{{category}}</p>
@@ -49,14 +49,15 @@
         </ul>
       </nav>
     </header>
+    <div class="banner">
+      <!-- <img class="banner" src="assets/global/banner.jpg" /> -->
+    </div>
       <div id="page-content">
         <section id="home">
           <section id="about">
             <h1>About</h1>
             <p>I'm a Seattle-area native with a passion for building user-centric technology experiences and tools. I have six years of experience on technology teams in leadership and design roles, which has led me to coding. Currently, I'm a student at Code Fellows, where I'm learning front-end technologies and computer science principles at a blisteringly fast pace.</p>
-          </section>
-          <section id="skills">
-            <h1>Skills</h1>
+            <h1>Skills and certifications</h1>
             <h2>Development</h2>
               <ul>
                 <li>JavaScript</li>
@@ -77,6 +78,12 @@
                 <li>User research and testing</li>
                 <li>Stakeholder relationship management</li>
               </ul>
+              <h2>Education</h2>
+                <ul>
+                  <li>Certificate of Software Development, Code Fellows (in progress)</li>
+                  <li>Certificate, User-Centered Design (University of Washington)</li>
+                  <li>B.A, Scripps College</li>
+                </ul>
           </section>
         </section>
         <section id="projects">

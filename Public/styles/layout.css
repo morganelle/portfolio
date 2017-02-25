@@ -7,6 +7,10 @@ div#page-content {
   padding-bottom: 80px;
 }
 
+section h1:not(:first-child) {
+    margin-top: 50px;
+}
+
 article.blog-post,
 article.project {
   margin-top: 50px;
@@ -18,7 +22,7 @@ nav.top-nav {
 }
 
 nav.top-nav i.menu {
-  padding: 11px 6px 6px 0;
+  padding: 11px 16px 6px 0;
   float: right;
 }
 
@@ -51,6 +55,14 @@ nav.top-nav a {
   color:inherit;
 }
 
+/* Image banner */
+div.banner {
+  background-image: url("/assets/global/banner-3.jpg");
+  min-height: 180px;
+  background-position: center;
+  opacity: 0.8;
+}
+
 /* Default section display */
 section#blog {
   display: none;
@@ -71,33 +83,34 @@ section#projects {
 
 /* Media Queries */
 /* Tablets */
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 767px) {
   /* menu rules */
   nav.top-nav ul  {
     background-color: rgba(255, 255, 255, 0);
     display: inline-block;
-    padding-top: 8px;
+    padding-top: 7px;
     padding-left: 6px;
   }
   nav.top-nav ul li {
-    padding: 3px 6px;
+    padding: 3px 4px;
     min-height: 0;
     display: inline-block;
     color: #393E41;
-    border: 1px solid rgba(255, 255, 255, 0);
+    border: 2px solid rgba(255, 255, 255, 0);
   }
   nav.top-nav li:hover {
-    color: #E94F37;
+    color: #E54B4B;
   }
   ul#page-nav {
     float: left;
   }
   nav.top-nav ul li.active-nav-item {
-    border: 1px solid #3F88C5;
+    /*border: 2px solid #94ABBE;*/
   }
   nav.top-nav ul li.active-nav-item a {
-    color: #3F88C5;
-    font-weight: 900;
+    border-bottom: 2px solid #94ABBE;
+    color: #94ABBE;
+    /*font-weight: 900;*/
   }
   ul#connect-nav {
     float: right;
@@ -108,6 +121,10 @@ section#projects {
   i.menu {
     display: none;
   }
+  div.banner {
+    background-image: url("/assets/global/banner-2.jpg");
+    min-height: 250px;
+  }
 }
 
 /* Laptop and above */
@@ -116,5 +133,9 @@ section#projects {
   nav {
     max-width: 1025px;
     margin: 0 auto;
+  }
+  div.banner {
+    background-image: url("/assets/global/banner-1.jpg");
+    min-height: 300px;
   }
 }
