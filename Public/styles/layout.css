@@ -7,6 +7,10 @@ div#page-content {
   padding-bottom: 80px;
 }
 
+section h1:not(:first-child) {
+    margin-top: 50px;
+}
+
 article.blog-post,
 article.project {
   margin-top: 50px;
@@ -84,28 +88,29 @@ section#projects {
   nav.top-nav ul  {
     background-color: rgba(255, 255, 255, 0);
     display: inline-block;
-    padding-top: 8px;
+    padding-top: 7px;
     padding-left: 6px;
   }
   nav.top-nav ul li {
-    padding: 3px 6px;
+    padding: 3px 4px;
     min-height: 0;
     display: inline-block;
     color: #393E41;
     border: 2px solid rgba(255, 255, 255, 0);
   }
   nav.top-nav li:hover {
-    color: #b28a80;
+    color: #E54B4B;
   }
   ul#page-nav {
     float: left;
   }
   nav.top-nav ul li.active-nav-item {
-    border: 2px solid #94ABBE;
+    /*border: 2px solid #94ABBE;*/
   }
   nav.top-nav ul li.active-nav-item a {
-    color: #5F819E;
-    font-weight: 900;
+    border-bottom: 2px solid #94ABBE;
+    color: #94ABBE;
+    /*font-weight: 900;*/
   }
   ul#connect-nav {
     float: right;
