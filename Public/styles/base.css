@@ -7,7 +7,7 @@
 }
 
 header {
-  border-bottom: 1px solid #393E41;
+  border-bottom: 1px solid #5F819E;
 }
 h1, h4, h5, h6 {
   font-weight: 300;
@@ -43,7 +43,7 @@ ul {
 
 a {
   text-decoration: underline;
-  color: #3F88C5;
+  color: #5F819E;
 }
 
 .label {
