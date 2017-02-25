@@ -7,7 +7,7 @@
 }
 
 header {
-  border-bottom: 1px solid #5F819E;
+  box-shadow: 0px 0px 24px 0px rgba(10,10,10,1);
 }
 h1, h4, h5, h6 {
   font-weight: 300;
