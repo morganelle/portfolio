@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Portfolio assignment for Code Fellows 301",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/morganelle/portfolio#readme",
   "dependencies": {
-    "express": "^4.14.1"
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "express-request-proxy": "^2.0.0",
+    "pg": "^6.1.2"
   }
 }

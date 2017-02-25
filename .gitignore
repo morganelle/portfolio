@@ -25,6 +25,9 @@ logs
 npm-debug.log*
 node_modules
 
+### GH ###
+./Public/scripts/models/githubToken.js
+
 # Runtime data
 pids
 *.pid
