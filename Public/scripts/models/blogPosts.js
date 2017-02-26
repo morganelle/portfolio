@@ -11,7 +11,6 @@
     this.author = opts.author;
     this.postContent = opts.postContent;
     this.category = opts.category;
-    // replace('{', '').replace('}', '').split(','); //.map(item => JSON.parse(item))
   }
 
   // Gets the Handlebar template and makes a function
@@ -64,7 +63,6 @@
             let blogpost = new BlogContent(item);
             blogpost.insertRecord(); // Add each record to the DB
           })
-          // BlogContent.toHtml(blogPosts);
         })
         .then(function(){
           BlogContent.getBlogPosts();
