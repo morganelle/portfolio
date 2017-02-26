@@ -59,7 +59,7 @@ app.get('/blogposts', function(request, response) {
     (post_id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     author VARCHAR(255) NOT NULL,
-    category VARCHAR(100),
+    category TEXT,
     "publishedDate" DATE,
     "postContent" TEXT NOT NULL);`
   )

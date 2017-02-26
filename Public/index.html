@@ -28,7 +28,11 @@
         <p class="byline">Published {{publishedDate}}</p>
         <p class="post-content">{{{postContent}}}</p>
         <p class="byline">- {{author}}</p>
-        <p class="categories label">{{category}}</p>
+        <p class="categories label">
+          {{#eachcat category}}
+            <a>{{this}}</a>
+          {{/eachcat}}
+        </p>
       </article>
     </script>
     <script id="repo-template" type="x-handlebars-template">

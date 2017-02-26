@@ -10,14 +10,25 @@
     this.publishedDate = (new Date(opts.publishedDate)).toDateString();
     this.author = opts.author;
     this.postContent = opts.postContent;
-    this.category = opts.category;
+    this.category = opts.category.replace('{"', '').replace('"}', '').split(',');
   }
 
   // Gets the Handlebar template and makes a function
   BlogContent.prototype.populateTemplate = function() {
     let template = Handlebars.compile($('#blog-template').html());
+    console.log('handlebars template', this);
     return template(this);
   }
+
+  Handlebars.registerHelper('eachcat', function(context, options) {
+    console.log('context',context);
+    let ret = '';
+    for(var i=0, j=context.length; i<j; i++) {
+      console.log('for loop at',[i], context[i]);
+      ret = ret + options.fn(context[i]);
+    }
+      return ret;
+  });
 
   BlogContent.load = function(newData) {
     newData.sort((a,b) => (new Date(b.publishedDate)) - (new Date(a.publishedDate)));
