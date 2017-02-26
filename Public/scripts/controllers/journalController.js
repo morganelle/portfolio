@@ -19,5 +19,12 @@
     $('#page-content section').hide();
     $('#blog').show().siblings();
   }
+  journalController.displayByCategory = function(ctx) {
+    var category = ctx.params.id;
+    $('article.blog-post').hide();
+    $('article.blog-post').has('a.' + category).css('display', 'block');
+    $('p#category-display').text(`Category: ${category}`);
+    $('html, body').animate({scrollTop: '0px'}, 800);
+  }
   module.journalController = journalController;
 })(window);
