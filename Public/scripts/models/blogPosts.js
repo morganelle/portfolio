@@ -30,7 +30,7 @@
     })
   }
 
-  // trying get with postgres
+  // Creating call to blogposts route and getting/storing posts in postgres
   BlogContent.getBlogPosts = function() {
     $.get('/blogposts')
     .then(function(results) {
