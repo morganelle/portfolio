@@ -10,13 +10,12 @@
     this.publishedDate = (new Date(opts.publishedDate)).toDateString();
     this.author = opts.author;
     this.postContent = opts.postContent;
-    this.category = opts.category.replace('{"', '').replace('"}', '').split(',');
+    this.category = opts.category.replace('{', '').replace('}', '').split(',').map(item => JSON.parse(item));
   }
 
   // Gets the Handlebar template and makes a function
   BlogContent.prototype.populateTemplate = function() {
     let template = Handlebars.compile($('#blog-template').html());
-    console.log('handlebars template', this);
     return template(this);
   }
 
