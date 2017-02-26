@@ -32,23 +32,23 @@ function proxyGitHub(request, response) {
 // Routes
 app.get('/github/*', proxyGitHub);
 app.get('/admin', function(request, response) {
-  response.sendFile('admin.html', {root: './Public'});
+  response.sendFile('admin.html', {root: './public'});
 });
 
 app.get('/index', function(request, response) {
-  response.sendFile('index.html', {root: './Public'});
+  response.sendFile('index.html', {root: './public'});
 });
 
 app.get('/journal', function(request, response) {
-  response.sendFile('index.html', {root: './Public'});
+  response.sendFile('index.html', {root: './public'});
 });
 
 app.get('/projects', function(request, response) {
-  response.sendFile('index.html', {root: './Public'});
+  response.sendFile('index.html', {root: './public'});
 });
 
 app.get('/', function(request, response) {
-  response.sendFile('index.html', {root: './Public'});
+  response.sendFile('index.html', {root: './public'});
 });
 
 // Routes for getting data
@@ -59,7 +59,7 @@ app.get('/blogposts', function(request, response) {
     (post_id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     author VARCHAR(255) NOT NULL,
-    category VARCHAR(100),
+    category TEXT,
     "publishedDate" DATE,
     "postContent" TEXT NOT NULL);`
   )

@@ -8,6 +8,7 @@
     <!-- Font Awesome CDN -->
     <script src="https://use.fontawesome.com/457d33e4c6.js"></script>
     <!-- Stylesheets -->
+    <link rel=icon href="favicon.png">
     <link rel="stylesheet" href="styles/external/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
@@ -27,7 +28,11 @@
         <p class="byline">Published {{publishedDate}}</p>
         <p class="post-content">{{{postContent}}}</p>
         <p class="byline">- {{author}}</p>
-        <p class="categories label">{{category}}</p>
+        <p class="categories label">
+          {{#catlinks category}}
+            {{this}}
+          {{/catlinks}}
+        </p>
       </article>
     </script>
     <script id="repo-template" type="x-handlebars-template">
@@ -50,7 +55,7 @@
       </nav>
     </header>
     <div class="banner">
-      <!-- <img class="banner" src="assets/global/banner.jpg" /> -->
+      <!-- <span>Morgan Nomura</span> -->
     </div>
       <div id="page-content">
         <section id="home">
@@ -98,6 +103,7 @@
         </section>
         <section id="blog">
           <h1>Journal</h1>
+          <p id="category-display"></p>
         </section>
       </div>
       <!-- <footer>Copyright Morgan Nomura 2017</footer> -->

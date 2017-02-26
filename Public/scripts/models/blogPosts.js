@@ -11,6 +11,7 @@
     this.author = opts.author;
     this.postContent = opts.postContent;
     this.category = opts.category;
+    // replace('{', '').replace('}', '').split(','); //.map(item => JSON.parse(item))
   }
 
   // Gets the Handlebar template and makes a function
@@ -19,9 +20,24 @@
     return template(this);
   }
 
+  Handlebars.registerHelper('catlinks', function(items, options) {
+    var out = '<p class="categories label">';
+    for(var i=0, l=items.length; i<l; i++) {
+      var link = (items[i]).replace(/ /g,'-');
+      out = out + `<a class="${link}" href="/journal/${link}">` + options.fn(items[i]) + "</a>&nbsp;";
+    }
+    return out + '</p>';
+  });
+
   BlogContent.load = function(newData) {
     newData.sort((a,b) => (new Date(b.publishedDate)) - (new Date(a.publishedDate)));
     blogPosts = newData.map((post) => new BlogContent(post));
+  }
+
+  BlogContent.parseCat = function(blogs) {
+    blogs.forEach(function(item) {
+      item.category = item.category.replace('{', '').replace('}', '').split(',');
+    });
   }
 
   BlogContent.toHtml = function(blogs) {
@@ -30,23 +46,25 @@
     })
   }
 
-  // trying get with postgres
+  // Creating call to blogposts route and getting/storing posts in postgres
   BlogContent.getBlogPosts = function() {
     $.get('/blogposts')
     .then(function(results) {
       if (results.length) {
-        console.log('journal posts loading from database');
+        console.log('journal posts loading from database', results);
         BlogContent.load(results);
+        BlogContent.parseCat(blogPosts);
         BlogContent.toHtml(blogPosts);
       } else {
         console.log('journal posts loading from JSON');
         $.getJSON('../../data/blogContent.json')
         .then(function(jsonData) {
           jsonData.forEach(function(item) {
+            console.log(item);
             let blogpost = new BlogContent(item);
             blogpost.insertRecord(); // Add each record to the DB
           })
-          BlogContent.toHtml(blogPosts);
+          // BlogContent.toHtml(blogPosts);
         })
         .then(function(){
           BlogContent.getBlogPosts();
