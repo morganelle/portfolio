@@ -20,16 +20,6 @@
     return template(this);
   }
 
-  Handlebars.registerHelper('eachcat', function(context, options) {
-    console.log('context',context);
-    let ret = '';
-    for(var i=0, j=context.length; i<j; i++) {
-      console.log('for loop at',[i], context[i]);
-      ret = ret + options.fn(context[i]);
-    }
-      return ret;
-  });
-
   BlogContent.load = function(newData) {
     newData.sort((a,b) => (new Date(b.publishedDate)) - (new Date(a.publishedDate)));
     blogPosts = newData.map((post) => new BlogContent(post));
